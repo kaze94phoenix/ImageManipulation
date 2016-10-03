@@ -234,7 +234,12 @@ class TransPanel extends JPanel {
         switch ( transIndex ) {
         case 0 : at.setToIdentity();
             at.translate(w/2, h/2); break;
-        case 1 : at.rotate(Math.toRadians(45)); break;
+        case 1 :
+            if(botao.equals("Redraw1"))
+            at.rotate(Math.toRadians(65));
+                    else
+             at.rotate(Math.toRadians(-45));   
+                ; break;
         case 2 : at.scale(0.5, 0.5); break;
         case 3 : at.shear(0.5, 0.0); break;
       }
