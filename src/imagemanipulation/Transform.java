@@ -239,7 +239,7 @@ class TransPanel extends JPanel {
             at.rotate(Math.toRadians(65));
                     else
              at.rotate(Math.toRadians(-45));   
-                ; break;
+               ; break;
         case 2 : at.scale(0.5, 0.5); break;
         case 3 : at.shear(0.5, 0.0); break;
       }
