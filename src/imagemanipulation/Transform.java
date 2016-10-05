@@ -106,7 +106,8 @@ ActionListener {
         primitive = new JComboBox( new Object []{
                                    "rectangle",
                                    "ellipse",
-                                   "text"});
+                                   "text",
+                                    "file"});
         primitive.addItemListener(this);
         newFont = newFont.deriveFont(0, 14.0f);
         primitive.setFont(newFont);
@@ -180,7 +181,9 @@ ActionListener {
 
     }
 
-    public void itemStateChanged(ItemEvent e){}
+    public void itemStateChanged(ItemEvent e){
+    System.out.println(e.getItem().toString());
+    }
 
    public void actionPerformed(ActionEvent e) {
       //  System.out.println(e.getActionCommand().toString());
@@ -234,14 +237,23 @@ class TransPanel extends JPanel {
         switch ( transIndex ) {
         case 0 : at.setToIdentity();
             at.translate(w/2, h/2); break;
-        case 1 :
-            if(botao.equals("Redraw1"))
-            at.rotate(Math.toRadians(65));
-                    else
-             at.rotate(Math.toRadians(-45));   
+        case 1 : if(botao.equals("Redraw1"))
+                    at.rotate(Math.toRadians(30));
+                else
+                    at.rotate(Math.toRadians(-30));   
                ; break;
-        case 2 : at.scale(0.5, 0.5); break;
-        case 3 : at.shear(0.5, 0.0); break;
+            
+        case 2 : if(botao.equals("Redraw1"))
+                    at.scale(0.5, 0.5); 
+                 else
+                    at.scale(2, 2);
+        break;
+        case 3 : if(botao.equals("Redraw1"))
+                     at.shear(0.5, 0.0); 
+                else
+                    at.shear(-0.5, 0.0);
+            
+        break;
       }
     }
 	
